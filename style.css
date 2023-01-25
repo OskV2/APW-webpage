@@ -1,3 +1,43 @@
 div {
   background-color: white;
 }
+
+.value {
+  text-align: center;
+}
+
+.value-name {
+  text-align: center;
+  font-weight: 600;
+}
+
+.value-title {
+  text-align: center;
+  font-weight: 100;
+  margin: 30px 0px 30px 0px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-text {
+  margin: 10px 0px 10px 0px;
+}
+
+.waterLevel {
+  position: absolute !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  scale: 2.5;
+}
+
+.waterLevel-label {
+  text-align: center;
+  font-size: 10px;
+}

@@ -9,14 +9,13 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide.min.css">
-    <link rel="stylesheet" type="text/css" href="dist/loading-bar.css"/>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.1.2/chart.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="dist/loading-bar.js"></script>
 </head>
 <body>
+
     <nav class="navbar navbar-collapse navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
@@ -27,9 +26,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Strona główna</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Strona główna</a></li>
                     <li class="nav-item"><a class="nav-link" href="last1h.html">Wyniki pomiarów z ostatniej godziny</a></li>
-                    <li class="nav-item"><a class="nav-link" href="last24h.html">Wyniki pomiarów z ostatniej doby</a></li>              
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="last24h.html">Wyniki pomiarów z ostatniej doby</a></li>              
                     <li class="nav-item"><a class="nav-link" href="settings.html">O projekcie</a></li>
                 </ul>
             </div>
@@ -37,12 +36,12 @@
     </nav>
 
     <div class="header">
-        <h1 class="header-text">Najnowsze dane</h1>
+        <h1 class="header-text">Dane z ostanich 24 godzin</h1>
     </div>
 
     <div class="container">
         <div class="row">
-            <div class="col-8">
+            <div class="col-12">
                 <section class="splide">
                     <div class="splide__track">
                         <div class="splide__list">
@@ -53,7 +52,7 @@
                                     <div class="col-4 value-name"><p>Wilgotność</p></div>
                                     <div class="col-4 value-name"><p>Data i czas pomiaru</p></div>
                                 </div>
-                                <div id="soilMoistureFakeDiv"></div>
+                                <div id="soilMoistureFakeDiv_24h"></div>
                             </div>
                             <div class="splide__slide" id="temp">
                                 <h2 class="value-title">Historia temperatury</h2>
@@ -62,7 +61,7 @@
                                     <div class="col-4 value-name"><p>Temperatura</p></div>
                                     <div class="col-4 value-name"><p>Data i czas pomiaru</p></div>
                                 </div>
-                                <div id="temperatureFakeDiv"></div>
+                                <div id="temperatureFakeDiv_24h"></div>
                             </div>
                             <div class="splide__slide" id="woda">
                                 <h2 class="value-title">Historia poziomu wody</h2>
@@ -71,28 +70,15 @@
                                     <div class="col-4 value-name"><p>Poziom wody w zbiorniku</p></div>
                                     <div class="col-4 value-name"><p>Data i czas pomiaru</p></div>
                                 </div>
-                                <div id="waterFakeDiv"></div>
+                                <div id="waterFakeDiv_24h"></div>
                             </div>
                         </div>
                     </div>
                 </section>
             </div>
-            <div class="col-4 position-relative">
-                <h2 class="value-title">Poziom wody w zbiorniku</h2>
-                <div data-type="fill" data-pattern-size ="50" data-path="M10 10L90 10L90 90L10 90Z" class="waterLevel ldBar" id="waterProgressBar" data-fill="data:ldbar/res,bubble(#248,#fff,50,1)">
-
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12">
-                    <div class="chart-container" style="position: relative; height:40vh; width:80vw">
-                        <canvas id="chart"></canvas>
-                    </div>
-                </div>
-            </div>
         </div>
-
+    </div>
+    
     <script src="app.js"></script>
     <script>
         var splide = new Splide( '.splide' );
